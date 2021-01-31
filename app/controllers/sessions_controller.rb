@@ -8,7 +8,9 @@ class SessionsController < ApplicationController
       redirect_to '/'
   end
   def destroy
-    session.delete :username
+    if !session[:username].blank?
+      session.delete :username
+    end
   end
 
 
