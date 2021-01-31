@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if !session[:username].blank?
       redirect_to '/'
     elsif !params[:username].blank?
-      session[:username] = params[:username]
+      session[:username] = params[:name]
       redirect_to '/'
     else
       redirect_to '/login'
